@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anode Automations - Pricing</title>
+    <meta name="description"
+        content="Transparent pricing for our AI Automation Systems. Starter, Growth, and Advanced plans.">
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .page-header {
+            padding-top: 6rem;
+            padding-bottom: 2rem;
+            text-align: center;
+        }
+
+        .pricing-section {
+            padding: 4rem 0 6rem;
+        }
+
+        .pricing-setup-fee {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+        }
+
+        .monthly-price {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            color: var(--text-primary);
+        }
+
+        .monthly-price span {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+
+        .plan-description {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+            line-height: 1.5;
+            min-height: 44px;
+        }
+
+        .pricing-card-container {
+            padding: 2.5rem;
+            border: 1px solid var(--border-color);
+            border-radius: var(--border-radius-lg);
+            background-color: var(--subtle-bg);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .pricing-card-container:hover {
+            border-color: rgba(250, 204, 21, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(15, 23, 42, 0.3);
+        }
+
+        .pricing-card-container.recommended {
+            border-color: var(--primary-color);
+            background: linear-gradient(180deg, rgba(250, 204, 21, 0.03) 0%, var(--subtle-bg) 100%);
+            box-shadow: 0 8px 30px rgba(250, 204, 21, 0.08);
+        }
+
+        .pricing-card-container.recommended .recommended-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: var(--primary-color);
+            color: var(--background-color);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .plan-name {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+        }
+
+        .includes-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--text-primary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .plan-features {
+            list-style: none;
+            margin-bottom: 2.5rem;
+            flex-grow: 1;
+        }
+
+        .plan-features li {
+            padding: 8px 0;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .plan-features li::before {
+            content: "•";
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+
+        h3.section-header {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: var(--text-primary);
+        }
+
+        .additional-services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo-container" aria-label="Home">
+                <img src="logo.svg" alt="Anode Automations Logo" class="nav-logo">
+                <span class="logo-text">Anode Automations</span>
+            </a>
+            <nav class="nav">
+                <a href="services.html">Services</a>
+                <a href="pricing.html" style="color: var(--primary-color);">Pricing</a>
+                <a href="index.html#contact" class="btn btn-secondary">Book Consultation</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- Page Header -->
+        <section class="page-header container">
+            <h1 class="hero-headline">Simple, Transparent Pricing</h1>
+            <p class="hero-subheadline" style="max-width: 700px; margin: 0 auto;">No hidden fees. Just powerful
+                automation systems designed to scale your business and outpace the competition.</p>
+        </section>
+
+        <!-- Automation Plans -->
+        <section class="pricing-section container">
+            <h3 class="section-header reveal-on-scroll">Automation Plans</h3>
+            <div class="pricing-cards"
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem;">
+
+                <!-- Tier 1 -->
+                <div class="pricing-card-container reveal-on-scroll delay-100">
+                    <div class="plan-name">Starter Automation</div>
+                    <div class="pricing-setup-fee">₹15,000 Setup</div>
+                    <div class="monthly-price">₹4,499 <span>/ month</span></div>
+                    <p class="plan-description">Best for small businesses starting with automation.</p>
+
+                    <div class="includes-label">Includes:</div>
+                    <ul class="plan-features">
+                        <li>Lead capture automation</li>
+                        <li>Basic customer auto-reply system</li>
+                        <li>1 platform integration (WhatsApp / Email / Website)</li>
+                        <li>Simple CRM setup</li>
+                        <li>Basic workflow automation</li>
+                        <li>Monthly system monitoring</li>
+                    </ul>
+
+                    <a href="index.html#contact" class="btn btn-secondary full-width">Book Consultation</a>
+                </div>
+
+                <!-- Tier 2 -->
+                <div class="pricing-card-container recommended reveal-on-scroll delay-200">
+                    <div class="recommended-badge">Most Popular</div>
+                    <div class="plan-name">Growth Automation</div>
+                    <div class="pricing-setup-fee">₹34,999 Setup</div>
+                    <div class="monthly-price">₹8,999 <span>/ month</span></div>
+                    <p class="plan-description">For businesses looking to scale operations and improve customer response
+                        times.</p>
+
+                    <div class="includes-label">Includes:</div>
+                    <ul class="plan-features">
+                        <li>Lead capture automation</li>
+                        <li>Multi-platform auto-reply system</li>
+                        <li>CRM integration</li>
+                        <li>Follow-up automation system</li>
+                        <li>Workflow automation</li>
+                        <li>Analytics and lead tracking</li>
+                        <li>Monthly optimization</li>
+                    </ul>
+
+                    <a href="index.html#contact" class="btn btn-primary full-width">Book Consultation</a>
+                </div>
+
+                <!-- Tier 3 -->
+                <div class="pricing-card-container reveal-on-scroll delay-300">
+                    <div class="plan-name">Advanced AI Automation</div>
+                    <div class="pricing-setup-fee">₹64,999 Setup</div>
+                    <div class="monthly-price">₹15,999 <span>/ month</span></div>
+                    <p class="plan-description">Complete automation system for businesses that want fully optimized
+                        workflows.</p>
+
+                    <div class="includes-label">Includes:</div>
+                    <ul class="plan-features">
+                        <li>AI sales assistant chatbot</li>
+                        <li>Advanced lead capture system</li>
+                        <li>Multi-channel customer communication</li>
+                        <li>CRM + workflow automation</li>
+                        <li>Custom integrations</li>
+                        <li>Priority support</li>
+                        <li>Automation performance optimization</li>
+                    </ul>
+
+                    <a href="index.html#contact" class="btn btn-secondary full-width">Book Consultation</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Additional Services -->
+        <section class="pricing-section container" style="padding-top: 2rem;">
+            <h3 class="section-header reveal-on-scroll">Additional Services</h3>
+            <div class="additional-services-grid">
+
+                <!-- Custom Automation -->
+                <div class="pricing-card-container reveal-on-scroll delay-100">
+                    <div class="plan-name">Custom Automation</div>
+                    <div class="monthly-price" style="font-size: 2.25rem;">Custom Quote</div>
+                    <p class="plan-description">For businesses that require specialized automation systems or advanced
+                        integrations.</p>
+
+                    <div class="includes-label">Examples Include:</div>
+                    <ul class="plan-features">
+                        <li>Custom AI workflows</li>
+                        <li>Complex CRM integrations</li>
+                        <li>Internal business automation systems</li>
+                        <li>Multi-platform automation architecture</li>
+                    </ul>
+
+                    <a href="index.html#contact" class="btn btn-secondary full-width">Contact for Quote</a>
+                </div>
+
+                <!-- Website Development -->
+                <div class="pricing-card-container reveal-on-scroll delay-200">
+                    <div class="plan-name">Website Development</div>
+                    <div class="monthly-price" style="font-size: 2.5rem;">₹19,999</div>
+                    <p class="plan-description" style="margin-bottom: 1.5rem;">Automation-ready business website
+                        designed to capture leads and integrate with your systems.</p>
+
+                    <div class="includes-label">Includes:</div>
+                    <ul class="plan-features">
+                        <li>Modern responsive website design</li>
+                        <li>AI chatbot integration</li>
+                        <li>Lead capture forms</li>
+                        <li>Mobile optimized layout</li>
+                        <li>Contact & inquiry automation</li>
+                        <li>Basic SEO setup</li>
+                    </ul>
+
+                    <a href="index.html#contact" class="btn btn-secondary full-width">Get Started</a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Call To Action -->
+        <section id="contact" class="cta container reveal-on-scroll" style="padding: 4rem 0 8rem;">
+            <h2>Ready to Automate Your Business?</h2>
+            <p>Book a free consultation to see how we can help you scale.</p>
+            <a href="index.html#contact" class="btn btn-primary btn-large">Schedule Free Consultation</a>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Anode Automations. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Chatbot Widget -->
+    <div id="chatbot-widget" class="chatbot-widget collapsed">
+
+        <div class="chatbot-header" id="chatbot-header">
+            <div class="chatbot-header-info">
+                <div class="chatbot-title">Anode</div>
+                <div class="chatbot-subtitle">AI Automation Assistant</div>
+            </div>
+            <button class="chatbot-toggle" id="chatbot-toggle" aria-label="Toggle Chat">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M18 15l-6-6-6 6" />
+                </svg>
+            </button>
+        </div>
+
+        <div class="chatbot-body">
+            <div class="chatbot-messages" id="chatbot-messages">
+                <div class="message ai-message">
+                    Hi! I'm Anode, the AI assistant for Anode Automations. I can help explain our automation services or
+                    recommend the best automation setup for your business.
+                </div>
+            </div>
+
+            <div class="chatbot-input-area">
+                <form id="chatbot-form" class="chatbot-form">
+                    <input type="text" id="chatbot-input" placeholder="Ask Anode about automation..." autocomplete="off"
+                        required>
+                    <button type="submit" class="chatbot-send" aria-label="Send Message">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <button id="chatbot-bubble" class="chatbot-bubble" aria-label="Open Chat">
+            <img src="logo.svg" alt="Chat">
+        </button>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
