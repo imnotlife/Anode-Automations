@@ -206,12 +206,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     revealElements.forEach(el => revealObserver.observe(el));
 
-    // --- Auto-open Chatbot After 2 Seconds ---
-    setTimeout(() => {
-        if (chatbotWidget.classList.contains('collapsed')) {
-            toggleChat();
-        }
-    }, 2000);
+    // --- Mobile Hamburger Menu Toggle ---
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+            // Toggle between ☰ and ✕
+            mobileMenuBtn.textContent = mobileMenu.classList.contains('open') ? '\u2715' : '\u2630';
+        });
+
+        // Close menu when a link is clicked
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+                mobileMenuBtn.textContent = '\u2630';
+            });
+        });
+    }
 
     // --- Service Page: Scroll-Spy for Service Nav ---
     const serviceNav = document.getElementById('service-nav');
