@@ -205,6 +205,27 @@ h4 {
     text-shadow: 0 0 8px rgba(56, 189, 248, 0.4);
 }
 
+/* Mobile Menu — Hidden by default */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    font-size: 1.6rem;
+    cursor: pointer;
+    padding: 4px 8px;
+    line-height: 1;
+    transition: color 0.3s ease;
+}
+
+.mobile-menu-btn:hover {
+    color: var(--primary-color);
+}
+
+.mobile-menu {
+    display: none;
+}
+
 /* =========================================
    Hero Section
    ========================================= */
@@ -1082,59 +1103,346 @@ h4 {
 }
 
 @media (max-width: 768px) {
-    .hero-headline {
-        font-size: 2.5rem;
-    }
 
-    .section-title {
-        font-size: 1.8rem;
-    }
-
-    .hero-actions {
-        flex-direction: column;
-    }
-
+    /* --- Mobile Hamburger Menu --- */
     .nav {
         display: none;
     }
 
+    .mobile-menu-btn {
+        display: block;
+    }
+
+    .mobile-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        right: 0;
+        background: rgba(15, 23, 42, 0.97);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border-color);
+        padding: 1rem 24px;
+        z-index: 200;
+    }
+
+    .mobile-menu.open {
+        display: flex;
+    }
+
+    .mobile-menu a {
+        padding: 12px 0;
+        font-size: 1rem;
+        font-weight: 500;
+        color: var(--text-secondary);
+        border-bottom: 1px solid var(--border-color);
+        transition: color 0.3s;
+    }
+
+    .mobile-menu a:last-child {
+        border-bottom: none;
+    }
+
+    .mobile-menu a:hover {
+        color: var(--primary-color);
+    }
+
+    /* --- Hero --- */
+    .hero-headline {
+        font-size: 2.2rem;
+    }
+
+    .hero-subheadline {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .hero {
+        padding: 5rem 0 3rem;
+    }
+
+    /* --- Section Titles --- */
+    .section-title {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+    }
+
+    .section-description {
+        font-size: 0.95rem;
+        margin-bottom: 2rem;
+    }
+
+    /* --- Systems/Services Cards --- */
     .systems-grid {
         grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .system-card {
+        padding: 1.25rem;
+    }
+
+    .system-card h3 {
+        font-size: 1.05rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .system-card p {
+        font-size: 0.85rem;
+    }
+
+    .system-icon {
+        width: 44px;
+        height: 44px;
+        margin-bottom: 0.75rem;
+    }
+
+    .automation-systems {
+        padding: 4rem 0;
+    }
+
+    /* --- How It Works Section --- */
+    .how-it-works {
+        padding: 4rem 0;
     }
 
     .steps-grid {
         flex-direction: column;
+        gap: 0;
+    }
+
+    .step-card {
+        padding: 1.5rem 1.25rem;
+    }
+
+    .step-card h3 {
+        font-size: 1rem;
+    }
+
+    .step-card p {
+        font-size: 0.85rem;
     }
 
     .step-connector {
         transform: rotate(90deg);
-        padding: 0.5rem 0;
+        padding: 0.25rem 0;
     }
 
+    /* --- Benefits / Credibility Cards --- */
     .benefits-grid,
     .credibility-grid {
         grid-template-columns: 1fr;
+        gap: 0.75rem;
     }
 
-    .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
+    .benefit-card,
+    .credibility-card {
+        padding: 1.25rem;
+    }
+
+    .benefit-card h3,
+    .credibility-card h3 {
+        font-size: 0.95rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .benefit-card p,
+    .credibility-card p {
+        font-size: 0.85rem;
+    }
+
+    .why-automate,
+    .why-choose {
+        padding: 4rem 0;
+    }
+
+    /* --- Automation Flow (index.html) --- */
+    .automation-flow {
+        padding: 4rem 0;
+    }
+
+    .flow-step {
+        padding: 0.75rem 1.25rem;
+        min-width: unset;
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .flow-step span {
+        font-size: 0.9rem;
+    }
+
+    .flow-icon-wrapper {
+        width: 40px;
+        height: 40px;
+    }
+
+    .flow-arrow {
+        height: 30px;
+    }
+
+    /* --- Services Page Workflow: Hide duplicate arrow SVG --- */
+    .sf-arrow svg.sf-arrow-bg {
+        display: none;
+    }
+
+    .sf-arrow {
+        height: 24px;
+        margin: 2px 0;
+    }
+
+    .sf-step {
+        padding: 0.5rem 1rem;
+        min-width: unset;
+    }
+
+    .sf-step span {
+        font-size: 0.8rem;
+    }
+
+    .sf-icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    /* --- Services Page Sections --- */
+    .service-section {
+        padding: 1.5rem;
+    }
+
+    .service-detail-title {
+        font-size: 1.5rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .service-detail-description {
+        font-size: 0.9rem;
+    }
+
+    .service-detail-features li {
+        font-size: 0.9rem;
+    }
+
+    .service-icon-lg {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 1rem;
+    }
+
+    .result-highlights {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+    }
+
+    .rh-card {
+        padding: 0.6rem 0.75rem;
+        font-size: 0.8rem;
+    }
+
+    /* --- Final CTA --- */
+    .final-cta {
+        padding: 4rem 0;
     }
 
     .final-cta h2 {
-        font-size: 2rem;
+        font-size: 1.75rem;
     }
 
+    .final-cta p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .btn-large {
+        padding: 12px 24px;
+        font-size: 0.95rem;
+    }
+
+    /* --- Footer --- */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding: 2.5rem 24px 2rem;
+    }
+
+    /* --- Pricing Page --- */
+    .pricing-card-container {
+        padding: 1.5rem;
+    }
+
+    .plan-name {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+
+    .monthly-price {
+        font-size: 2.2rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .plan-description {
+        font-size: 0.85rem;
+        margin-bottom: 1.25rem;
+        min-height: unset;
+    }
+
+    .plan-features li {
+        font-size: 0.85rem;
+        padding: 5px 0;
+    }
+
+    .plan-features {
+        margin-bottom: 1.5rem;
+    }
+
+    .pricing-setup-fee {
+        font-size: 0.95rem;
+    }
+
+    .additional-services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    h3.section-header {
+        font-size: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    /* --- Chatbot: ~30% screen height, fixed bottom-right --- */
     .chatbot-widget:not(.collapsed) {
-        bottom: 0;
-        right: 0;
-        width: 100%;
-        height: 100vh;
-        border-radius: 0;
+        bottom: 12px;
+        right: 12px;
+        width: calc(100% - 24px);
+        max-width: 350px;
+        height: 30vh;
+        min-height: 220px;
+        border-radius: var(--border-radius-md);
     }
 
     .chatbot-widget:not(.collapsed) .chatbot-header {
-        border-radius: 0;
+        border-radius: var(--border-radius-md) var(--border-radius-md) 0 0;
+    }
+
+    .chatbot-bubble {
+        width: 50px;
+        height: 50px;
+        padding: 12px;
+    }
+
+    .chatbot-widget {
+        bottom: 16px;
+        right: 16px;
+    }
+
+    /* --- Prevent horizontal scrolling --- */
+    body {
+        overflow-x: hidden;
     }
 }
 
